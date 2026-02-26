@@ -19,7 +19,6 @@ public class TopicoController {
     @Autowired
     private TopicoRepository repository;
 
-    // ✅ POST - Crear tópico
     @PostMapping
     public ResponseEntity<?> registrarTopico(@RequestBody @Valid DatosRegistroTopico datos) {
 
@@ -42,13 +41,11 @@ public class TopicoController {
         return ResponseEntity.status(201).body(topicoGuardado);
     }
 
-    // ✅ GET - Listar todos
     @GetMapping
     public ResponseEntity<List<Topico>> listarTopicos() {
         return ResponseEntity.ok(repository.findAll());
     }
 
-    // ✅ GET - Detallar por id
     @GetMapping("/{id}")
     public ResponseEntity<Topico> detallarTopico(@PathVariable Long id) {
         return repository.findById(id)
@@ -56,7 +53,6 @@ public class TopicoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // ✅ PUT - Actualizar
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarTopico(
             @PathVariable Long id,
@@ -81,7 +77,6 @@ public class TopicoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // ✅ DELETE - Eliminar
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarTopico(@PathVariable Long id) {
 

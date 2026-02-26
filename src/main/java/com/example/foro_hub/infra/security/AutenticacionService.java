@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service // Esta anotación es vital para que Spring lo encuentre
+@Service
 public class AutenticacionService implements UserDetailsService {
 
     @Autowired
@@ -15,7 +15,7 @@ public class AutenticacionService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // Esto busca en tu tabla 'usuarios' de MySQL
+
         return repository.findByLogin(username);
     }
 }

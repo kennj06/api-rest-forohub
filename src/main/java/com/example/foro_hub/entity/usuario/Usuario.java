@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Usuario implements UserDetails { // <--- 1. Agregamos esto
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,25 +24,23 @@ public class Usuario implements UserDetails { // <--- 1. Agregamos esto
     private String login;
     private String clave;
 
-    // --- MÉTODOS OBLIGATORIOS DE USERDETAILS ---
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Por ahora, todos los usuarios tendrán el rol "ROLE_USER"
+
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
     public String getPassword() {
-        return clave; // Spring usará esto para comparar la contraseña
+        return clave;
     }
 
     @Override
     public String getUsername() {
-        return login; // Spring usará esto como el nombre de usuario
+        return login;
     }
 
-    // Estos 4 métodos deben devolver TRUE para que el usuario pueda entrar
     @Override
     public boolean isAccountNonExpired() {
         return true;

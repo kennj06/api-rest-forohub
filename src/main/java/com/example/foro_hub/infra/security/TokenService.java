@@ -12,7 +12,7 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
 
-    private String secret = "12345678"; // luego lo moveremos a application.properties
+    private String secret = "12345678";
 
     public String generarToken(Usuario usuario) {
         try {
