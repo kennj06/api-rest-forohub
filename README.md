@@ -45,6 +45,31 @@ Este proyecto integra conceptos vistos a lo largo del curso como:
 
 ---
 
+## 🚀 Cómo ejecutar el proyecto
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/kennj06/api-rest-forohub.git](https://github.com/kennj06/api-rest-forohub.git)
+2. **Configurar la base de datos:**
+
+- Crea una base de datos en MySQL llamada: forohub_db.
+
+- El proyecto utiliza Flyway, por lo que las tablas se crearán automáticamente al iniciar la app.
+
+3. **Ejecutar:**
+- Usa el comando mvn spring-boot:run o corre la clase principal ForoHubApplication. La API estará en http://localhost:8080.
+
+📝 Ejemplo de JSON (POST /topicos)
+```JSON
+{
+  "titulo": "Duda sobre Spring Boot",
+  "mensaje": "No entiendo las validaciones",
+  "autor": "Kenia Jiménez",
+  "curso": "Java"
+}
+```
+---
+
 ## 🔐 Autenticación
 
 La API utiliza autenticación basada en JWT.
@@ -117,5 +142,6 @@ Es el cierre del proceso de formación en Back-End con Java y Spring Boot.
 
 ## 👩‍💻 Autora
 
-Desarrollado por Kenia Jiménez  
-Proyecto académico - Especialización Back-End
+**Desarrollado por Kenia Jiménez.** 
+
+*Proyecto académico para el programa **Oracle Next Education** en alianza con **Alura Latam**.* *Especialización Back-End con Java y Spring Boot.*
